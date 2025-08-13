@@ -75,14 +75,14 @@ All colors MUST be HSL.
   }
 
   .dark {
-    /* Enhanced dark mode with better contrast */
-    --background: 220 13% 6%;
-    --foreground: 0 0% 96%;
+    /* Keep same dark theme since we're already using dark as base */
+    --background: 220 13% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 220 13% 8%;
+    --card: 220 13% 12%;
     --card-foreground: 0 0% 95%;
 
-    --popover: 220 13% 8%;
+    --popover: 220 13% 10%;
     --popover-foreground: 0 0% 95%;
 
     --primary: 142 71% 45%;
@@ -91,8 +91,8 @@ All colors MUST be HSL.
     --secondary: 210 11% 71%;
     --secondary-foreground: 220 13% 8%;
 
-    --muted: 220 13% 12%;
-    --muted-foreground: 210 11% 65%;
+    --muted: 220 13% 15%;
+    --muted-foreground: 210 11% 71%;
 
     --accent: 142 71% 45%;
     --accent-foreground: 220 13% 8%;
@@ -100,41 +100,9 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 18%;
-    --input: 220 13% 12%;
+    --border: 220 13% 20%;
+    --input: 220 13% 15%;
     --ring: 142 71% 45%;
-  }
-
-  .light {
-    /* Light mode colors */
-    --background: 0 0% 98%;
-    --foreground: 220 13% 8%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 220 13% 8%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 13% 8%;
-
-    --primary: 142 71% 35%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 210 11% 85%;
-    --secondary-foreground: 220 13% 8%;
-
-    --muted: 210 11% 95%;
-    --muted-foreground: 220 13% 45%;
-
-    --accent: 142 71% 35%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 210 11% 85%;
-    --input: 210 11% 95%;
-    --ring: 142 71% 35%;
-  }
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
