@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,31 +36,52 @@ const Navigation = () => {
 
           {/* Navigation Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">
+            <Link 
+              to="/" 
+              className={`transition-colors ${location.pathname === '/' ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+            >
               Home
-            </a>
-            <a href="#programmes" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link 
+              to="/programmes" 
+              className={`transition-colors ${location.pathname === '/programmes' ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+            >
               Programmes
-            </a>
-            <a href="#studio" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link 
+              to="/studio" 
+              className={`transition-colors ${location.pathname === '/studio' ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+            >
               Mind Refreshment Studio
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link 
+              to="/about" 
+              className={`transition-colors ${location.pathname === '/about' ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+            >
               About
-            </a>
-            <a href="#events" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link 
+              to="/events" 
+              className={`transition-colors ${location.pathname === '/events' ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+            >
               Events
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
+            </Link>
+            <Link 
+              to="/contact" 
+              className={`transition-colors ${location.pathname === '/contact' ? 'text-primary' : 'text-foreground hover:text-primary'}`}
+            >
               Contact
-            </a>
+            </Link>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Client Portal
-            </Button>
+            <ThemeToggle />
+            <Link to="/client-portal">
+              <Button variant="ghost" size="sm">
+                Client Portal
+              </Button>
+            </Link>
             <Button size="sm" className="animate-glow">
               Start Journey
             </Button>
