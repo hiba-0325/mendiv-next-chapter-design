@@ -36,7 +36,7 @@ const Navigation = () => {
             <a href="#home" className="text-foreground hover:text-primary transition-colors">
               Home
             </a>
-            <a href="#programmes" className="text-foreground hover:text-primary transition-colors">
+            <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
               Programmes
             </a>
             <a href="#studio" className="text-foreground hover:text-primary transition-colors">
