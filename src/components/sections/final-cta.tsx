@@ -7,20 +7,24 @@ const FinalCTA = () => {
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+        <div
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-secondary/10 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Header */}
           <div className="mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6">
+            <h1 className="text-xl md:text-4xl font-serif font-bold mb-6">
               Your Next Chapter{" "}
               <span className="gradient-text">Starts Now</span>
-            </h2>
+            </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Don't wait another day to unlock your optimal health potential. 
-              Join thousands who have already transformed their lives with Mendiv.
+              Don't wait another day to unlock your optimal health potential.
+              Join thousands who have already transformed their lives with
+              Mendiv.
             </p>
           </div>
 
@@ -30,7 +34,9 @@ const FinalCTA = () => {
               <div className="w-16 h-16 bg-primary/20 rounded-2xl mx-auto mb-4 flex items-center justify-center glow-primary group-hover:animate-glow">
                 <ArrowRight className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-3">Start LifeMap360™</h3>
+              <h3 className="text-xl font-serif font-bold mb-3">
+                Start LifeMap360™
+              </h3>
               <p className="text-muted-foreground mb-4 text-sm">
                 Complete genetic analysis and personalized optimization plan
               </p>
@@ -43,7 +49,9 @@ const FinalCTA = () => {
               <div className="w-16 h-16 bg-secondary/20 rounded-2xl mx-auto mb-4 flex items-center justify-center glow-secondary group-hover:animate-glow">
                 <Phone className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-3">Discovery Call</h3>
+              <h3 className="text-xl font-serif font-bold mb-3">
+                Discovery Call
+              </h3>
               <p className="text-muted-foreground mb-4 text-sm">
                 Free 30-minute consultation with our wellness experts
               </p>
@@ -56,7 +64,9 @@ const FinalCTA = () => {
               <div className="w-16 h-16 bg-accent/20 rounded-2xl mx-auto mb-4 flex items-center justify-center glow-primary group-hover:animate-glow">
                 <Calendar className="h-8 w-8 text-accent" />
               </div>
-              <h3 className="text-xl font-serif font-bold mb-3">Join Retreat</h3>
+              <h3 className="text-xl font-serif font-bold mb-3">
+                Join Retreat
+              </h3>
               <p className="text-muted-foreground mb-4 text-sm">
                 7-day intensive transformation experience
               </p>
@@ -72,11 +82,13 @@ const FinalCTA = () => {
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
                 <span className="text-primary text-sm">✓</span>
               </div>
-              <h4 className="text-lg font-semibold">90-Day Transformation Guarantee</h4>
+              <h4 className="text-lg font-semibold">
+                90-Day Transformation Guarantee
+              </h4>
             </div>
             <p className="text-muted-foreground text-sm">
-              If you don't see measurable improvements in your biological markers within 90 days, 
-              we'll refund your investment completely.
+              If you don't see measurable improvements in your biological
+              markers within 90 days, we'll refund your investment completely.
             </p>
           </div>
         </div>

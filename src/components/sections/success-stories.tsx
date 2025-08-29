@@ -1,160 +1,100 @@
-import { ChevronLeft, ChevronRight, TrendingDown } from "lucide-react";
-import { useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Calendar, ArrowRight } from "lucide-react";
 
-const SuccessStories = () => {
-  const [currentStory, setCurrentStory] = useState(0);
-
-  const stories = [
+export default function BlogSection() {
+  const posts = [
     {
-      name: "Sarah Chen",
-      age: "Executive, 45",
-      image: "👩‍💼",
-      biologicalAge: { before: 52, after: 41 },
-      timeframe: "90 days",
-      quote: "I went from feeling exhausted every afternoon to having energy that lasts all day. The precision of Mendiv's approach made all the difference.",
-      improvements: ["Energy +40%", "Sleep Quality +35%", "Recovery Time -50%"]
+      title: "The Future of Longevity: Decoding Your DNA",
+      date: "Aug 20, 2025",
+      excerpt:
+        "How LifeMap360™ is revolutionizing health by integrating genetic, epigenetic, and microbiome data into one personalized roadmap.",
+      image:
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
     },
     {
-      name: "Marcus Rodriguez", 
-      age: "Entrepreneur, 38",
-      image: "👨‍💼",
-      biologicalAge: { before: 44, after: 35 },
-      timeframe: "120 days",
-      quote: "The DNA insights revealed why traditional diets never worked for me. My personalized protocol transformed everything.",
-      improvements: ["Focus +60%", "Muscle Mass +15%", "Inflammation -45%"]
+      title: "NeuroSleep™: Unlocking Restorative Sleep",
+      date: "Aug 10, 2025",
+      excerpt:
+        "Discover how circadian rhythm reset and genetic sleep profiling can help you achieve deeper, more restorative sleep.",
+      image:
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
     },
     {
-      name: "Dr. Amanda Foster",
-      age: "Physician, 42", 
-      image: "👩‍⚕️",
-      biologicalAge: { before: 48, after: 38 },
-      timeframe: "6 months",
-      quote: "As a doctor, I was skeptical. But the science behind Mendiv's approach is irrefutable. The results speak for themselves.",
-      improvements: ["Cognitive Function +30%", "Joint Health +25%", "Stress Levels -55%"]
-    }
+      title: "Beauty & Regeneration: Inside the Beauty Map",
+      date: "Jul 30, 2025",
+      excerpt:
+        "Explore how skin longevity, hormonal mapping, and metabolic optimization converge for ageless beauty.",
+      image:
+        "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
+    },
   ];
 
-  const nextStory = () => {
-    setCurrentStory((prev) => (prev + 1) % stories.length);
-  };
-
-  const prevStory = () => {
-    setCurrentStory((prev) => (prev - 1 + stories.length) % stories.length);
-  };
-
-  const story = stories[currentStory];
-
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-muted/20">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            Real People, <span className="gradient-text">Real Results</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            See how our clients have transformed their health and unlocked their optimal potential.
-          </p>
-        </div>
+    <section className="relative py-20 bg-[#101214] text-white">
+      {/* Glow accents */}
+      <div className="absolute -top-10 -left-10 w-60 h-60 rounded-full bg-green-500/20 blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-72 h-72 rounded-full bg-green-400/10 blur-3xl"></div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Story Card */}
-          <div className="glass-card relative">
-            {/* Navigation */}
-            <div className="absolute top-6 right-6 flex space-x-2">
-              <button
-                onClick={prevStory}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              >
-                <ChevronLeft className="h-5 w-5" />
-              </button>
-              <button
-                onClick={nextStory}
-                className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
-              >
-                <ChevronRight className="h-5 w-5" />
-              </button>
-            </div>
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
+        {/* Section title */}
+        <motion.h2
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-4xl md:text-5xl font-heading font-bold text-center mb-4"
+        >
+          Latest <span className="text-green-500">Insights</span>
+        </motion.h2>
+        <p className="text-center text-foreground-muted mb-12 max-w-2xl mx-auto">
+          Stay updated with the latest research, strategies, and innovations in
+          longevity, sleep, and beauty regeneration.
+        </p>
 
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              {/* Left: Story Content */}
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="text-4xl">{story.image}</div>
-                  <div>
-                    <h3 className="text-xl font-serif font-bold">{story.name}</h3>
-                    <p className="text-muted-foreground">{story.age}</p>
-                  </div>
-                </div>
-
-                <blockquote className="text-lg italic leading-relaxed">
-                  "{story.quote}"
-                </blockquote>
-
-                <div className="space-y-2">
-                  <h4 className="font-semibold">Key Improvements:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {story.improvements.map((improvement, index) => (
-                      <span
-                        key={index}
-                        className="px-3 py-1 bg-primary/20 border border-primary/30 rounded-full text-sm text-primary"
-                      >
-                        {improvement}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Right: Biological Age Visual */}
-              <div className="text-center">
-                <h4 className="text-lg font-semibold mb-6">Biological Age Transformation</h4>
-                
-                <div className="space-y-6">
-                  {/* Before */}
-                  <div className="glass bg-red-500/10 border-red-500/20 p-4 rounded-xl">
-                    <div className="text-3xl font-bold text-red-400 mb-2">
-                      {story.biologicalAge.before}
-                    </div>
-                    <div className="text-sm text-muted-foreground">Before</div>
-                  </div>
-
-                  {/* Arrow */}
-                  <div className="flex items-center justify-center">
-                    <TrendingDown className="h-8 w-8 text-primary" />
-                  </div>
-
-                  {/* After */}
-                  <div className="glass bg-primary/10 border-primary/20 p-4 rounded-xl">
-                    <div className="text-3xl font-bold text-primary mb-2">
-                      {story.biologicalAge.after}
-                    </div>
-                    <div className="text-sm text-muted-foreground">After</div>
-                  </div>
-
-                  <div className="text-sm text-muted-foreground">
-                    in {story.timeframe}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Dots Indicator */}
-            <div className="flex justify-center space-x-2 mt-8">
-              {stories.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentStory(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentStory ? "bg-primary" : "bg-white/20"
-                  }`}
+        {/* Blog grid */}
+        <div className="grid md:grid-cols-3 gap-10">
+          {posts.map((post, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="group glass-card rounded-2xl overflow-hidden border border-white/10 hover:border-green-500/40 transition-all duration-500 flex flex-col"
+            >
+              {/* Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-              ))}
-            </div>
-          </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center text-sm text-foreground-muted mb-3">
+                  <Calendar size={16} className="mr-2 text-green-400" />
+                  {post.date}
+                </div>
+                <h3 className="text-lg font-heading font-semibold mb-2 group-hover:text-green-400 transition-colors line-clamp-2">
+                  {post.title}
+                </h3>
+                <p className="text-foreground-muted text-sm mb-4 line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <motion.button
+                  whileHover={{ x: 5 }}
+                  className="mt-auto inline-flex items-center text-green-400 font-medium"
+                >
+                  Read More <ArrowRight size={18} className="ml-2" />
+                </motion.button>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default SuccessStories;
+}

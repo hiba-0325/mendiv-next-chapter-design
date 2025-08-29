@@ -6,20 +6,20 @@ import NeuroSleepSection from "@/components/sections/neurosleep-section";
 import SuccessStories from "@/components/sections/success-stories";
 import FinalCTA from "@/components/sections/final-cta";
 import Footer from "@/components/ui/footer";
+import Faqs from "@/components/sections/faqs";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navigation />
       <main>
         <HeroSection />
         <WhyMendiv />
         <LifeMapSection />
         <NeuroSleepSection />
         <SuccessStories />
+        <Faqs />
         <FinalCTA />
       </main>
-      <Footer />
     </div>
   );
 };

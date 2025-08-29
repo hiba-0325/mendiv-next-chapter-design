@@ -139,6 +139,7 @@ All colors MUST be HSL.
     @apply glass rounded-2xl p-6 shadow-2xl;
   }
 
+  
   /* Glow effects */
   .glow-primary {
     box-shadow: 0 0 40px hsl(var(--glow-primary)), 
@@ -185,3 +186,4 @@ All colors MUST be HSL.
     }
   }
 }
+

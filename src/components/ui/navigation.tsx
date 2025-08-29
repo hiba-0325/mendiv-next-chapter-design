@@ -1,12 +1,27 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 
-const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+interface NavLink {
+  href: string;
+  label: string;
+}
+
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  const navLinks: NavLink[] = [
+    { href: "/", label: "Home" },
+    { href: "/programmes", label: "Programmes" },
+    { href: "/mind-refreshment-studio", label: "Mind Refreshment Studio" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+    // { href: "/portal", label: "Client Portal" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 30);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -14,58 +29,88 @@ const Navigation = () => {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "glass border-b border-white/10"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="text-2xl font-serif font-bold">
-              M<span className="text-primary">e</span>ndiv
-            </div>
-            <div className="text-sm text-muted-foreground">Your Next Chapter</div>
-          </div>
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[90%] max-w-7xl">
+      <div
+        className={`flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8 rounded-2xl transition-all duration-500 border ${
+          isScrolled
+            ? "backdrop-blur-lg bg-white/300 border-white/30"
+            : "backdrop-blur-lg bg-white/300 border-white/30"
+        }`}
+      >
+        {/* Logo */}
+        <div className="flex-shrink-0">
+          <a href="/">
+            <img
+              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/mendiv-O9U4M90cTh9IOt9HRUf70JHpEB1Xfk.png"
+              alt="Mendiv"
+              width={120}
+              height={40}
+              className="h-12 w-auto"
+            />
+          </a>
+        </div>
 
-          {/* Navigation Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">
-              Home
+        {/* Desktop Navigation */}
+        <div className="hidden lg:flex flex-1 justify-center space-x-6">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className={`font-lato transition-colors duration-300 ${
+                isScrolled
+                  ? "text-white hover:text-green-500"
+                  : "text-white hover:text-green-400"
+              }`}
+            >
+              {link.label}
             </a>
-            <a href="#programmes" className="text-foreground hover:text-primary transition-colors">
-              Programmes
-            </a>
-            <a href="#studio" className="text-foreground hover:text-primary transition-colors">
-              Mind Refreshment Studio
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#events" className="text-foreground hover:text-primary transition-colors">
-              Events
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
-          </div>
+          ))}
+        </div>
 
-          {/* CTA Buttons */}
-          <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Client Portal
-            </Button>
-            <Button size="sm" className="animate-glow">
-              Start Journey
-            </Button>
-          </div>
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMenuOpen((prev) => !prev)}
+            className={`p-2 transition-colors duration-300 ${
+              isScrolled
+                ? "text-black hover:text-green-500"
+                : "text-white hover:text-green-400"
+            }`}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="lg:hidden mt-2">
+          <div
+            className={`px-2 pt-2 pb-3 space-y-1 rounded-2xl shadow-md backdrop-blur-lg border transition-colors ${
+              isScrolled
+                ? "bg-white/90 border-gray-200/40"
+                : "bg-black/50 border-white/20"
+            }`}
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`block font-lato px-3 py-2 transition-colors ${
+                  isScrolled
+                    ? "text-black hover:text-green-500"
+                    : "text-white hover:text-green-400"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };
 
-export default Navigation;
+export default Navbar;

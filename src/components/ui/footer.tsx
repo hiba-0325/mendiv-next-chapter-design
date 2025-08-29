@@ -13,20 +13,32 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-muted-foreground text-sm">
-              Your Next Chapter in optimal health and longevity. 
-              Science-backed wellness programs for the modern professional.
+              Your Next Chapter in optimal health and longevity. Science-backed
+              wellness programs for the modern professional.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -36,19 +48,34 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <div className="space-y-2 text-sm">
-              <a href="#programmes" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="/programmes"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 Programmes
               </a>
-              <a href="#studio" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="/studio"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 Mind Refreshment Studio
               </a>
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="/about"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 About
               </a>
-              <a href="#events" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="#events"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 Events
               </a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="/contact"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 Contact
               </a>
             </div>
@@ -58,19 +85,34 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Services</h3>
             <div className="space-y-2 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 LifeMap360™
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 BioAlign™ System
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 NeuroSleep™
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 Digital Twin
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors block">
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-primary transition-colors block"
+              >
                 Corporate Wellness
               </a>
             </div>
@@ -85,7 +127,8 @@ const Footer = () => {
                 <span className="text-muted-foreground">hello@mendiv.com</span>
               </div>
               <div className="text-muted-foreground">
-                Transform your biology,<br />
+                Transform your biology,
+                <br />
                 design your future.
               </div>
             </div>
@@ -109,7 +152,10 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 Mendiv. All rights reserved. | Privacy Policy | Terms of Service</p>
+          <p>
+            &copy; 2025 Mendiv. All rights reserved. | Privacy Policy | Terms of
+            Service
+          </p>
         </div>
       </div>
     </footer>
