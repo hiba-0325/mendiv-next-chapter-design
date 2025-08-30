@@ -64,27 +64,8 @@ const Navbar: React.FC = () => {
             >
               {link.label}
             </a>
-<<<<<<< HEAD
           ))}
         </div>
-=======
-            <a href="/programmes" className="text-foreground hover:text-primary transition-colors">
-              Programmes
-            </a>
-            <a href="#studio" className="text-foreground hover:text-primary transition-colors">
-              Mind Refreshment Studio
-            </a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#events" className="text-foreground hover:text-primary transition-colors">
-              Events
-            </a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
-          </div>
->>>>>>> dbd5eb64f5e0252f234d887bab2a0eb8735069a6
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden">

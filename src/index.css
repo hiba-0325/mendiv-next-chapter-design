@@ -54,7 +54,6 @@ All colors MUST be HSL.
     --gradient-primary: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 55%));
     --gradient-glass: linear-gradient(135deg, hsl(220 13% 15% / 0.1), hsl(220 13% 20% / 0.05));
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 8%), hsl(220 13% 12%));
-    --gradient-radial: radial-gradient(circle, hsl(142 71% 45% / 0.2) 0%, transparent 70%);
 
     --radius: 1rem;
 
@@ -164,11 +163,6 @@ All colors MUST be HSL.
   /* Hero gradient text */
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent;
-  }
-
-  /* Radial gradient utility */
-  .bg-gradient-radial {
-    background: var(--gradient-radial);
   }
 }
 
